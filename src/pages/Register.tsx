@@ -4,6 +4,7 @@ const Register = () => {
 	return (
 		<div>
 			<div className="">
+				<h1>Register</h1>
 				<form>
 					<label htmlFor=""> First name</label>
 					<input type="text" placeholder="Enter your first name" />
