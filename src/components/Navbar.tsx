@@ -24,8 +24,8 @@ const Navbar = () => {
 					<NavLink to={"/live-chat"}>
 						<li>Live Chat</li>
 					</NavLink>
-					<NavLink to={"/feedback"}>
-						<li>Feedback</li>
+					<NavLink to={"/contact-us"}>
+						<li>Contact Us</li>
 					</NavLink>
 					<NavLink to={"/event-calendar"}>
 						<li>Event Calendar</li>
