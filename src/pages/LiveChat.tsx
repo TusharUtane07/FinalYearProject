@@ -1,10 +1,12 @@
 import { ChangeEvent, useState } from "react";
+import BackButton from "../components/BackButton";
 
 const LiveChat = () => {
 	const [message, setMessage] = useState<string>("");
 
 	return (
 		<div>
+			<BackButton />
 			<h1>Live Chat</h1>
 			<div>
 				<div>here the chat will be shown</div>

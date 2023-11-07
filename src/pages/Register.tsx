@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, MouseEvent, useState } from "react";
 import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import BackButton from "../components/BackButton";
 
 const Register = () => {
 	const [email, setEmail] = useState<string>("");
@@ -23,9 +24,10 @@ const Register = () => {
 
 	return (
 		<div>
+			<BackButton />
 			<div className="">
 				<h1>Register</h1>
-				<form>
+				<form method="POST">
 					<label htmlFor=""> First name</label>
 					<input
 						required

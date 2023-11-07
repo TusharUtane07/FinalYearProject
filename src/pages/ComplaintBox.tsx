@@ -1,6 +1,9 @@
+import BackButton from "../components/BackButton";
+
 const ComplaintBox = () => {
 	return (
 		<div>
+			<BackButton />
 			<h1>Complaint Box</h1>
 			<form>
 				<div>

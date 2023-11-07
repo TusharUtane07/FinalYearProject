@@ -1,6 +1,9 @@
+import BackButton from "../components/BackButton";
+
 const Contact = () => {
 	return (
 		<div>
+			<BackButton />
 			<h1>Contact Us</h1>
 			<div>
 				<p>

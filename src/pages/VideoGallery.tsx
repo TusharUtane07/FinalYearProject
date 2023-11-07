@@ -1,7 +1,12 @@
-import React from "react";
+import BackButton from "../components/BackButton";
 
 const VideoGallery = () => {
-	return <div>VideoGallery</div>;
+	return (
+		<div>
+			<BackButton />
+			VideoGallery
+		</div>
+	);
 };
 
 export default VideoGallery;

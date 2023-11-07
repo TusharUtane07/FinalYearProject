@@ -1,6 +1,7 @@
 import { useState, ChangeEvent, FormEvent, MouseEvent } from "react";
 import { NavLink } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import BackButton from "../components/BackButton";
 
 const Login = () => {
 	const [email, setEmail] = useState<string>("");
@@ -14,6 +15,7 @@ const Login = () => {
 
 	return (
 		<div>
+			<BackButton />
 			<div className="">
 				<h1>Login</h1>
 				<form>

@@ -1,7 +1,10 @@
+import BackButton from "../components/BackButton";
+
 const DailyUpdates = () => {
 	return (
 		<>
 			<div>
+				<BackButton />
 				<h1>Daily Updates</h1>
 			</div>
 			<div>

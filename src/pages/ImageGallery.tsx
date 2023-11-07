@@ -1,7 +1,12 @@
-import React from "react";
+import BackButton from "../components/BackButton";
 
 const ImageGallery = () => {
-	return <div>ImageGallery</div>;
+	return (
+		<div>
+			<BackButton />
+			ImageGallery
+		</div>
+	);
 };
 
 export default ImageGallery;

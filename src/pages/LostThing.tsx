@@ -1,7 +1,12 @@
-import React from "react";
+import BackButton from "../components/BackButton";
 
 const LostThing = () => {
-	return <div>LostThing</div>;
+	return (
+		<div>
+			<BackButton />
+			LostThing
+		</div>
+	);
 };
 
 export default LostThing;
