@@ -1,6 +1,31 @@
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import "firebase/auth";
+import toast from "react-hot-toast";
+import { auth } from "../Firebase";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
+	const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+	useEffect(() => {
+		const unsubscribe = auth.onAuthStateChanged((user) => {
+			setIsLoggedIn(!!user);
+		});
+		return () => unsubscribe();
+	}, []);
+
+	const handleLogout = () => {
+		auth
+			.signOut()
+			.then(() => {
+				console.log("User is signed out");
+				toast.success("User signed out successfully");
+			})
+			.catch((error) => {
+				console.error("Error signing out:", error.message);
+			});
+	};
+
 	return (
 		<div>
 			<div>
@@ -36,12 +61,20 @@ const Navbar = () => {
 					<NavLink to={"/daily-updates"}>
 						<li>Daily Updates</li>
 					</NavLink>
-					<NavLink to={"/login"}>
-						<li>Login</li>
-					</NavLink>
-					<NavLink to={"/register"}>
-						<li>Register</li>
-					</NavLink>
+					{isLoggedIn ? (
+						<>
+							<li onClick={handleLogout}>Logout</li>
+						</>
+					) : (
+						<>
+							<NavLink to={"/login"}>
+								<li>Login</li>
+							</NavLink>
+							<NavLink to={"/register"}>
+								<li>Register</li>
+							</NavLink>
+						</>
+					)}
 				</ul>
 			</div>
 		</div>

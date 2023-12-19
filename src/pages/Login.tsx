@@ -1,16 +1,29 @@
 import { useState, ChangeEvent, FormEvent, MouseEvent } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import BackButton from "../components/BackButton";
+import toast from "react-hot-toast";
+import { auth } from "../Firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 	const [showPassword, setShowPassword] = useState<boolean>(false);
 
-	const handleSubmit = (e: FormEvent) => {
+	const navigate = useNavigate();
+
+	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
-		console.log(email, password);
+
+		try {
+			await signInWithEmailAndPassword(auth, email, password);
+			toast.success("Logged in Successful");
+			navigate("/");
+		} catch (error: any) {
+			console.error("Login error:", error.message);
+			toast.error("Login failed. Please check your email and password.");
+		}
 	};
 
 	return (

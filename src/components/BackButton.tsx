@@ -8,7 +8,7 @@ const BackButton = () => {
 	};
 
 	return (
-		<div onClick={goBack} className="cursor-pointer">
+		<div onClick={goBack} className="cursor-pointer text-5xl">
 			<BiArrowBack />
 		</div>
 	);
